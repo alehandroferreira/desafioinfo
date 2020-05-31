@@ -6,11 +6,13 @@
   "author": "Alehandro Rocha <alehandro.ferreira@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "mocha ./test/**/*.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mocha": "^7.2.0",
     "uuidv4": "^6.1.0"
   },
   "devDependencies": {

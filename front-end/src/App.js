@@ -66,12 +66,6 @@ export default function App() {
     }
   }
 
-  async function handleUpdateCar(id){
-    try {
-      await api.put(`car/${id}`)
-    }
-  }
-
   return (
     <>
       <Header title="Info Sistemas" />

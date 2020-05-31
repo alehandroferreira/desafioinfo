@@ -22,12 +22,14 @@ function validateCarId(request, response, next) {
 
 app.use('/car/:id', validateCarId)
 
-app.get('/car', (request, response) => {
+const listCar = app.get('/car', (request, response) => {
 
   return response.json(cars)
 })
 
-app.post('/car', (request, response) => {
+module.exports = listCar
+
+const createCar = app.post('/car', (request, response) => {
   const { placa, chassi, renavam, modelo, marca, ano } = request.body
 
   const car = {
@@ -45,7 +47,9 @@ app.post('/car', (request, response) => {
   return response.json(car)
 })
 
-app.put('/car/:id', (request, response) => {
+module.exports = createCar
+
+const updateCar = app.put('/car/:id', (request, response) => {
   const { id } = request.params
 
   const { placa, chassi, renavam, modelo, marca, ano } = request.body
@@ -74,7 +78,9 @@ app.put('/car/:id', (request, response) => {
   return response.json(car)
 })
 
-app.delete('/car/:id', (request, response) => {
+module.exports = updateCar
+
+const deleteCar = app.delete('/car/:id', (request, response) => {
   const { id } = request.params
 
 
@@ -91,6 +97,7 @@ app.delete('/car/:id', (request, response) => {
   return response.status(204).send()
 })
 
+module.exports = deleteCar
 
 app.listen(3333, () => {
   console.log('✅️ Server started on port 3333')
