@@ -1,12 +1,28 @@
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
 }
 
-body {
-    background: #f5f5f5;
-    font: 14px sans-serif;
-    color: #333;
+main {
+  margin-left: 40px;
+}
+
+@media (max-width: 1000px){
+  #app {
+    flex-direction: column;
+  }
+
+  #app main {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  #app aside {
+    width: 100%;
+  }
 }
